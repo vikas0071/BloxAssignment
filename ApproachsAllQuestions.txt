@@ -1,0 +1,64 @@
+Section A:
+
+Find the strategic location of the warehouse:
+Approach:
+To find the strategic location of the warehouse, we can calculate the median of all the factories' x-coordinates and y-coordinates separately. The median is chosen because it minimizes the sum of absolute distances in a 1D case and works well in reducing the overall distance in a 2D case as well.
+Steps:
+
+Calculate the median of all x-coordinates of the factories.
+Calculate the median of all y-coordinates of the factories.
+Set the strategic location of the warehouse to the point represented by the calculated x and y medians.
+Time Complexity: O(n) for calculating the median of both x and y coordinates.
+Space Complexity: O(1).
+
+Optimum solution for a grid setup:
+Approach:
+This problem can be efficiently solved using a Breadth-First Search (BFS) algorithm. We start the BFS from the warehouse cell and explore all possible paths to reach each factory, avoiding the no trespass area.
+Steps:
+
+Perform a BFS traversal starting from the warehouse cell.
+During BFS, keep track of the distance traveled to reach each factory.
+Return the minimum total distance traveled.
+Time Complexity: O(m^2) for a grid with m x m cells.
+Space Complexity: O(m^2) for storing the visited cells and distances.
+
+For the other questions in Section A and Section B, I'll provide brief descriptions of the approaches:
+
+Section A:
+
+Efficient session id generator:
+Approach:
+To minimize memory footprint, you can use a bitmap or bitset to keep track of used and available session ids. Using a bitmap, you can represent the 32-bit integers efficiently, with each bit representing the availability of a session id.
+Methods:
+a. getUniqueSessionId(): This method returns an available unique session id by finding the first 0 bit in the bitmap.
+b. releaseSessionId(sessionId): This method releases the session id by setting the corresponding bit to 0, making it available for reuse.
+
+Time Complexity: O(1) for both methods.
+Space Complexity: O(1) for storing the bitmap.
+
+Unit distance pairs in half convex point set:
+Approach:
+To find all unit distance pairs in a half convex point set, you can use a sweep line algorithm. Sort the points based on their x-coordinate, and then sweep a vertical line from left to right. As you sweep, maintain a set of points sorted by their y-coordinate. At each point, check the neighboring points in the set to find unit distance pairs.
+Time Complexity: O(n log n) for sorting + O(n) for sweep line + O(1) for checking unit distance pairs.
+Space Complexity: O(n) for storing the points.
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Section B:
+
+Parse valid JSON string:
+Approach:
+You can use the built-in Dart JSON library to parse the JSON string into corresponding Dart objects, lists, or maps.
+Time Complexity: The time complexity depends on the JSON string's size, but the JSON parsing library generally has linear time complexity.
+Space Complexity: The space complexity depends on the structure and size of the JSON data.
+
+Handling API call limits:
+Approach:
+To avoid crossing the API call limit, you can use rate limiting techniques, such as implementing a token bucket algorithm or a sliding window rate limiter. These techniques will allow you to control the rate at which API calls are made, ensuring they stay within the safe limit.
+
+Money transfer between accounts in different banks:
+Approach:
+To transfer money between accounts in different banks, you can use secure communication protocols like HTTPS and implement authentication and authorization mechanisms. Additionally, use transactional mechanisms to ensure the atomicity of money transfers, avoiding potential issues like double spending.
